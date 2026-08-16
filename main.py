@@ -133,10 +133,26 @@ def frentota (palabras_abelardo, palabras_letras):
             rounds = rounds + 1
 
 
+def tic_tac_toe():
+    canvas.crear_imagen_con_tamanio(0,0,CANVAS_WIDTH, CANVAS_HEIGHT,"Tictactoe.png")
+    x_1= canvas.crear_imagen_con_tamanio(50,600,100,650, "x.png")
+    x_2= canvas.crear_imagen_con_tamanio(110,600,160,650, "x.png")
+    x_3= canvas.crear_imagen_con_tamanio(170,600,220,650, "x.png")
+    x_4= canvas.crear_imagen_con_tamanio(50,660,100,710, "x.png")
+    x_5= canvas.crear_imagen_con_tamanio(110,660,160,710, "x.png")
+    x_6= canvas.crear_imagen_con_tamanio(170,660,220,710, "x.png")
+    x_7= canvas.crear_imagen_con_tamanio(50,710,100,760, "x.png")
+    x_8= canvas.crear_imagen_con_tamanio(110,710,160,760, "x.png")
+    x_9= canvas.crear_imagen_con_tamanio(50,660,100,710, "x.png")
+
+    
+
+
 def main():
     pantalla_frente(jueguito)
     canvas.eliminar_todo()
     frentota (palabras_abelardo,palabras_letras)
+    tic_tac_toe()
     
     
 
