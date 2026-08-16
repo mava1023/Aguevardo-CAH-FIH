@@ -1017,8 +1017,8 @@ class Canvas(tkinter.Canvas):
         Devuelve
             el objeto imagen gráfica que muestra la imagen especificada en la ubicación especificada.
         """
-        from PIL import ImageTk
-        from PIL import Image
+        from PIL import ImageTk # type: ignore
+        from PIL import Image # type: ignore
         image = Image.open(file_path)
 
         # Resize the image if another width and height is specified

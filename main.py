@@ -25,27 +25,34 @@ def pantalla_frente(jueguito):
     canvas.establecer_color(start, '#5F0826')
     canvas.establecer_fuente(start, 'Century')
     canvas.establecer_tamanio(start,20)
+    rect_texto = canvas.crear_rectangulo(140, 300, 265,340 , "#5F0826")
+    rect_texto2 = canvas.crear_rectangulo(145, 305, 260, 335, "#FE7F2D")
+    start= canvas.crear_texto(170,310, 'START')
     while jueguito == 0:
         canvas.esperar_por_clic()
-        click= canvas.obtener_nuevos_clics_del_mouse()
-        x = click[0]
-        y = click[1]
+        x= canvas.obtener_mouse_x()
+        y=canvas.obtener_mouse_y()
+        print (x, y)
         objs = canvas.encontrar_superposicion(x,y,x+1, y+1)
         figuritas = [rect_texto,rect_texto2,start]
-        if str(rect_texto) in objs:
+        if rect_texto in objs:
             jueguito = 1
-        elif str (rect_texto2) in objs:
+        elif rect_texto2 in objs:
+           jueguito = 1
+        elif start in objs:
             jueguito = 1
-        elif str(start) in objs:
-            jueguito = 1
-    print = jueguito
+
+    
+    
 
 
 
 def frentota (palabras_abelardo, palabras_letras):
     rounds = 1
     frente = canvas.crear_imagen_con_tamanio(0,0, CANVAS_WIDTH, CANVAS_HEIGHT, "Hagman.png")
-    puntaje_rounds= canvas.crear_texto(90,24, "1",'Century',14, '#FFFFFF')
+    puntaje_rounds= canvas.crear_texto(90,24, "1")
+    canvas.establecer_color_relleno(puntaje_rounds,"#FFFFFF")
+
     rect_1 = canvas.crear_rectangulo(45, 400,90,445 , "#FFFFFF", "#000000")
     rect_2 = canvas.crear_rectangulo(105, 400,150,445 , "#FFFFFF", "#000000")
     rect_3 = canvas.crear_rectangulo(165, 400,210,445 , "#FFFFFF", "#000000")
@@ -58,18 +65,18 @@ def frentota (palabras_abelardo, palabras_letras):
     rect_10 = canvas.crear_rectangulo(285, 465,330,510 , "#FFFFFF", "#000000")
     rects = [rect_1,rect_2,rect_3,rect_4,rect_5,rect_6,rect_7,rect_8,rect_9,rect_10]
     for i in range (len(rects) ) :
-        canvas.set_hidden(rects [i], True)
+        canvas.establecer_oculto(rects [i], True)
 
-    show_letra1= canvas.crear_texto(63,414, "0" ,'Century', 20, '#000000')
-    show_letra2= canvas.crear_texto(123,414,  "0" ,'Century', 20, '#000000')
-    show_letra3= canvas.crear_texto(182,414, "0" ,'Century',20, '#000000')
-    show_letra4= canvas.crear_texto(242,414, "0" , 'Century', 20, '#000000')
-    show_letra5= canvas.crear_texto(303,414, "0" ,'Century', 20, '#000000')
-    show_letra6= canvas.crear_texto(63,478,  "0" ,'Century', 20, '#000000')
-    show_letra7= canvas.crear_texto(123,478,"0" ,'Century',  20, '#000000')
-    show_letra8= canvas.crear_texto(182,478,"0" ,'Century',  20, '#000000')
-    show_letra9= canvas.crear_texto(242,478, "0" ,'Century',  20, '#000000')
-    show_letra10= canvas.crear_texto(303,478, "0" ,'Century',  20, '#000000')
+    show_letra1= canvas.crear_texto(63,414, "0" )
+    show_letra2= canvas.crear_texto(123,414,  "0" )
+    show_letra3= canvas.crear_texto(182,414, "0")
+    show_letra4= canvas.crear_texto(242,414, "0" )
+    show_letra5= canvas.crear_texto(303,414, "0" )
+    show_letra6= canvas.crear_texto(63,478,  "0")
+    show_letra7= canvas.crear_texto(123,478,"0" )
+    show_letra8= canvas.crear_texto(182,478,"0" )
+    show_letra9= canvas.crear_texto(242,478, "0" )
+    show_letra10= canvas.crear_texto(303,478, "0" )
     
     show_letras = [show_letra1,show_letra2,show_letra3,show_letra4,show_letra5,show_letra6,show_letra7,show_letra8,show_letra9,show_letra10]
     for i in range (len(show_letras) ) :
@@ -78,9 +85,9 @@ def frentota (palabras_abelardo, palabras_letras):
     while rounds == 1:
         you = 0
         aberlado = 0
-        puntaje_mistakes= canvas.crear_texto(330,74, "0" ,'Century', 24, '#FFFFFF')
-        puntaje_you= canvas.crear_texto(260,23, "0" ,'Century',14, '#000000')
-        puntaje_abelardo= canvas.crear_texto(388,23, "0" ,'Century', 14, '#000000')
+        puntaje_mistakes= canvas.crear_texto(330,74, "0" ) #24
+        puntaje_you= canvas.crear_texto(260,23, "0" ) #14
+        puntaje_abelardo= canvas.crear_texto(388,23, "0" ) #24
         if round == 1 or 3 or 5:
 
             palabra_number = random.randint (0,16)
@@ -99,7 +106,6 @@ def frentota (palabras_abelardo, palabras_letras):
                 lista_word.append(palabra[i])
             
             
-            
         
 
 
@@ -115,7 +121,7 @@ def main():
     pantalla_frente(jueguito)
     canvas.eliminar_todo()
     frentota (palabras_abelardo,palabras_letras)
-    # TODO: your code here!
+    
     
 
 
