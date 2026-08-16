@@ -140,14 +140,41 @@ def frentota (palabras_abelardo, palabras_letras):
     canvas.establecer_color(show_letras_usadas8,"#000000")
     canvas.establecer_fuente(show_letras_usadas8, "Century", 20)
 
-    show_letras_usadas9= canvas.crear_texto(220,250, "0" ) 
-    canvas.establecer_color(show_letras_usadas1,"#000000")
-    canvas.establecer_fuente(show_letras_usadas1, "Century", 20)
+    show_letras_usadas9= canvas.crear_texto(220,230, "0" ) 
+    canvas.establecer_color(show_letras_usadas9,"#000000")
+    canvas.establecer_fuente(show_letras_usadas9, "Century", 20)
 
-    show_letras_usadas2= canvas.crear_texto(240,200, "0" ) 
-    canvas.establecer_color(show_letras_usadas2,"#000000")
-    canvas.establecer_fuente(show_letras_usadas2, "Century", 20)
+    show_letras_usadas10= canvas.crear_texto(240,230, "0" ) 
+    canvas.establecer_color(show_letras_usadas10,"#000000")
+    canvas.establecer_fuente(show_letras_usadas10, "Century", 20)
 
+    show_letras_usadas11= canvas.crear_texto(260,230, "0" ) 
+    canvas.establecer_color(show_letras_usadas11,"#000000")
+    canvas.establecer_fuente(show_letras_usadas11, "Century", 20)
+
+    show_letras_usadas12= canvas.crear_texto(280,230, "0" ) 
+    canvas.establecer_color(show_letras_usadas12,"#000000")
+    canvas.establecer_fuente(show_letras_usadas12, "Century", 20)
+
+    show_letras_usadas13= canvas.crear_texto(300,230, "0" ) 
+    canvas.establecer_color(show_letras_usadas13,"#000000")
+    canvas.establecer_fuente(show_letras_usadas13, "Century", 20)
+
+    show_letras_usadas14= canvas.crear_texto(320,230, "0" ) 
+    canvas.establecer_color(show_letras_usadas14,"#000000")
+    canvas.establecer_fuente(show_letras_usadas14, "Century", 20)
+
+    show_letras_usadas15= canvas.crear_texto(340,230, "0" ) 
+    canvas.establecer_color(show_letras_usadas15,"#000000")
+    canvas.establecer_fuente(show_letras_usadas15, "Century", 20)
+
+    show_letras_usadas16= canvas.crear_texto(360,230, "0" ) 
+    canvas.establecer_color(show_letras_usadas16,"#000000")
+    canvas.establecer_fuente(show_letras_usadas16, "Century", 20)
+
+    show_letras_usadas=[show_letras_usadas1,show_letras_usadas2,show_letras_usadas3,show_letras_usadas4,show_letras_usadas5,show_letras_usadas6,show_letras_usadas7,show_letras_usadas8,show_letras_usadas9,show_letras_usadas10,show_letras_usadas11,show_letras_usadas12,show_letras_usadas13,show_letras_usadas14,show_letras_usadas15,show_letras_usadas16]
+    for i in range (0, len(show_letras_usadas)):
+            canvas.establecer_oculto(show_letras_usadas[i],True)
     while rounds == 1:
         you = 0
         aberlado = 0
