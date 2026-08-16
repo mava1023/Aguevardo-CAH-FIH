@@ -1,6 +1,13 @@
 from graficos import Canvas
 import random
-    
+import os
+import sys
+
+def recurso(nombre):
+    """Resuelve la ruta de un archivo de recurso (imagen) tanto en modo script como empaquetado (PyInstaller)."""
+    base = getattr(sys, '_MEIPASS', os.path.dirname(os.path.abspath(__file__)))
+    return os.path.join(base, nombre)
+
 CANVAS_WIDTH = 400
 CANVAS_HEIGHT = 600
 
@@ -16,7 +23,7 @@ palabras_letras = [8,8,7,6,6,5,4,5,5,5,8,4,5,5,4,5,5]
 
 def pantalla_frente(jueguito):
     
-    abelardo = canvas.crear_imagen_con_tamanio(0,0,CANVAS_WIDTH, CANVAS_HEIGHT, "menu.png")
+    abelardo = canvas.crear_imagen_con_tamanio(0,0,CANVAS_WIDTH, CANVAS_HEIGHT, recurso("menu.png"))
     rect_texto = canvas.crear_rectangulo(140, 300, 265,340)
     rect_texto2 = canvas.crear_rectangulo(145, 305, 260, 335,)
     canvas.establecer_color(rect_texto, "#5F0826")
@@ -45,15 +52,15 @@ def pantalla_frente(jueguito):
     
     
 def loose():
-    cambodia = canvas.crear_imagen_con_tamanio(0,0,CANVAS_WIDTH, CANVAS_HEIGHT,"wompwomp.png")
+    cambodia = canvas.crear_imagen_con_tamanio(0,0,CANVAS_WIDTH, CANVAS_HEIGHT,recurso("wompwomp.png"))
 def win():
-    camerun = canvas.crear_imagen_con_tamanio(0,0,CANVAS_WIDTH, CANVAS_HEIGHT,"yippyjailanyway.png")
+    camerun = canvas.crear_imagen_con_tamanio(0,0,CANVAS_WIDTH, CANVAS_HEIGHT,recurso("yippyjailanyway.png"))
 
 def frentota (palabras_abelardo, palabras_letras):
     mistakes = 0
     rounds = 1
     intentos = 6
-    frente = canvas.crear_imagen_con_tamanio(0,0, CANVAS_WIDTH, CANVAS_HEIGHT, "Hagman.png")
+    frente = canvas.crear_imagen_con_tamanio(0,0, CANVAS_WIDTH, CANVAS_HEIGHT, recurso("Hagman.png"))
     puntaje_rounds= canvas.crear_texto(91,29, "1")
     canvas.establecer_color_relleno(puntaje_rounds,"#FFFFFF")
     canvas.establecer_fuente(puntaje_rounds, "Century", 12)
