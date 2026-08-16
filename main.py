@@ -103,17 +103,8 @@ def frentota (palabras_abelardo, palabras_letras):
             new_l= letter.upper()
 
             for i in range (0,letras-1):
-                lista_word.append(palabra[i])
-            
-            
-        
-
-
-            
-            
-
-
-            
+                lista_word.append(palabra[i]) 
+    
             rounds = rounds + 1
 
 
