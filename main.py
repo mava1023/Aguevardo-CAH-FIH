@@ -1,4 +1,4 @@
-from graphics import Canvas
+from graficos import Canvas
 import random
     
 CANVAS_WIDTH = 400
