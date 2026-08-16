@@ -8,10 +8,10 @@ canvas = Canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 letras =["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 letrasm =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 both=[letras,letrasm]
-palabras_abelardo = ["FRACKING", "SECURITY", "PROLIFE", "RIGHTS", "FAMILY", "TIGER", "FIRM","", "PETRO", "URIBE", "TRADWIFE", "DESSERT", "FOREHEAD","FRAUD", "ELECTIONS","TRUMP","MILEI"]
+palabras_abelardo = ["FRACKING", "SECURITY", "PROLIFE", "RIGHTS", "FAMILY", "TIGER", "FIRM","SNARL", "PETRO", "URIBE", "TRADWIFE", "DESSERT", "FOREHEAD","FRAUD", "ELECTIONS","TRUMP","MILEI"]
 Mega_JAIL = 0
 jueguito= 0
-palabras_letras = [8,8,7,6,6,6,5,4,4,5,5,8,6,8,5,9,5,5]
+palabras_letras = [8,8,7,6,6,5,4,5,5,5,8,7,8,5,9,5,5]
 
 
 def pantalla_frente(jueguito):
