@@ -107,7 +107,7 @@ def frentota (palabras_abelardo, palabras_letras):
 
 
 def main():
-    #pantalla_frente(jueguito)
+    pantalla_frente(jueguito)
     canvas.eliminar_todo()
     frentota (palabras_abelardo,palabras_letras)
     # TODO: your code here!
