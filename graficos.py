@@ -1001,36 +1001,7 @@ class Canvas(tkinter.Canvas):
         """
         return self.__crear_imagen_con_tamanio_opcional(x, y, file_path, width=width, height=height, **kwargs)
 
-    def __crear_imagen_con_tamanio_opcional(self, x, y, file_path, width=None, height=None, **kwargs):
-        """
-        Crea una imagen con el nombre de archivo especificado en la posición especificada en el lienzo.
-        Opcionalmente, especifique la anchura y la altura para cambiar el tamaño de la imagen.
-
-        Args:
-            x: coordenada x de la esquina superior izquierda de la imagen en el lienzo
-            y: coordenada y de la esquina superior izquierda de la imagen en el lienzo
-            ruta_archivo: ruta del archivo de imagen que se cargará y mostrará en el lienzo
-            anchura: anchura opcional de la imagen.  Si no hay ninguna, se utiliza la anchura del archivo de imagen.
-            height: altura opcional a incluir para la imagen. Si no hay ninguna, utiliza la altura del archivo de imagen.
-            kwargs: otras palabras clave de tkinter.
-
-        Devuelve
-            el objeto imagen gráfica que muestra la imagen especificada en la ubicación especificada.
-        """
-        from PIL import ImageTk
-        from PIL import Image
-        image = Image.open(file_path)
-
-        # Resize the image if another width and height is specified
-        if width is not None and height is not None:
-            image = image.resize((width, height))
-
-        image = ImageTk.PhotoImage(image)
-        img_obj = super().create_image(x, y, anchor="nw", image=image, **kwargs)
-        # note: if you don't do this, the image gets garbage collected!!!
-        # this introduces a memory leak which can be fixed by overloading delete
-        self._image_gb_protection[img_obj] = image
-        return img_obj
+    
 
 
 
