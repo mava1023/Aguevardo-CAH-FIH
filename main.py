@@ -16,16 +16,16 @@ palabras_letras = [8,8,7,6,6,5,4,5,5,5,8,7,8,5,9,5,5]
 
 def pantalla_frente(jueguito):
     
-    abelardo = canvas.create_image_with_size(0,0,CANVAS_WIDTH, CANVAS_HEIGHT, "menu.png")
-    rect_texto = canvas.create_rectangle(140, 300, 265,340 , "#5F0826")
-    rect_texto2 = canvas.create_rectangle(145, 305, 260, 335, "#FE7F2D")
-    start= canvas.create_text(170,310, text = 'START',font = 'Century', font_size = 20, color ='#5F0826')
+    abelardo = crear_imagen_con_tamanio(0,0,CANVAS_WIDTH, CANVAS_HEIGHT, "menu.png")
+    rect_texto = canvas.crear_rectangulo(140, 300, 265,340 , "#5F0826")
+    rect_texto2 = canvas.crear_rectangulo(145, 305, 260, 335, "#FE7F2D")
+    start= canvas.crear_texto(170,310, text = 'START',font = 'Century', font_size = 20, color ='#5F0826')
     while jueguito == 0:
-        canvas.wait_for_click()
-        click = canvas.get_last_click()
+        canvas.esperar_por_clic()
+        click.p = canvas.obtener_nuevos_clics_del_mouse()
         x = click[0]
         y = click[1]
-        objs = canvas.find_overlapping(x,y,x+1, y+1)
+        objs = canvas.encontrar_superposicion(x,y,x+1, y+1)
         figuritas = [rect_texto,rect_texto2,start]
         if str(rect_texto) in objs:
             jueguito = 1
@@ -93,6 +93,15 @@ def frentota (palabras_abelardo, palabras_letras):
             for i in range (0,letras-1):
                 lista_word.append(palabra[i])
             
+            
+            
+        
+
+
+            
+            
+
+
             
             rounds = rounds + 1
 
