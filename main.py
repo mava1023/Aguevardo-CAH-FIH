@@ -176,6 +176,8 @@ def frentota (palabras_abelardo, palabras_letras):
     for i in range (0, len(show_letras_usadas)):
             canvas.establecer_oculto(show_letras_usadas[i],True)
     while rounds <= 6:
+        lista_word= []
+        lista_letras_ronda = []
         you = 0
         aberlado = 0
         if rounds == 1 or 3 or 5:
@@ -183,7 +185,6 @@ def frentota (palabras_abelardo, palabras_letras):
             palabra_number = random.randint (0,16)
             print (palabra_number)
             palabra = palabras_abelardo [palabra_number]
-            lista_word= []
             letras = palabras_letras [palabra_number]
             juego_acaba = False
             
@@ -197,9 +198,14 @@ def frentota (palabras_abelardo, palabras_letras):
                     letter = input("Plase enter a letter, either uppercase or lowercase: ")
 
                 new_l= letter.upper()
+
+                lista_letras_ronda.append(new_l)
                 for i in range (0,letras):
                     lista_word.append(palabra[i])
-                print(new_l,lista_word)
+                print(new_l,lista_word, lista_letras_ronda)
+
+                canvas.establecer_texto(show_letras_usadas[len(lista_letras_ronda) -1 ], new_l)
+                canvas.establecer_oculto(show_letras_usadas[[len(lista_letras_ronda) -1 ], False])
                 if new_l in palabra:
                     posicion_letra = palabra.find(new_l)
                     
@@ -209,9 +215,11 @@ def frentota (palabras_abelardo, palabras_letras):
                 elif new_l not in palabra:
                     mistakes -= 1
                     canvas.establecer_texto(puntaje_mistakes, str(mistakes))
+
+            
                     
 
-                round += 1
+                rounds += 1
                     
 
         elif round == 2 or 4 or 6:
