@@ -205,7 +205,7 @@ def frentota (palabras_abelardo, palabras_letras):
                 print(new_l,lista_word, lista_letras_ronda)
 
                 canvas.establecer_texto(show_letras_usadas[len(lista_letras_ronda) -1 ], new_l)
-                canvas.establecer_oculto(show_letras_usadas[[len(lista_letras_ronda) -1 ], False])
+                canvas.establecer_oculto(show_letras_usadas[len(lista_letras_ronda) -1 ], False)
                 if new_l in palabra:
                     posicion_letra = palabra.find(new_l)
                     
@@ -213,7 +213,7 @@ def frentota (palabras_abelardo, palabras_letras):
                     canvas.establecer_texto(show_letras[posicion_letra], new_l)
 
                 elif new_l not in palabra:
-                    mistakes -= 1
+                    mistakes += 1
                     canvas.establecer_texto(puntaje_mistakes, str(mistakes))
 
             
