@@ -19,7 +19,7 @@ def pantalla_frente(jueguito):
     abelardo = canvas.crear_imagen_con_tamanio(0,0,CANVAS_WIDTH, CANVAS_HEIGHT, "menu.png")
     rect_texto = canvas.crear_rectangulo(140, 300, 265,340 , "#5F0826")
     rect_texto2 = canvas.crear_rectangulo(145, 305, 260, 335, "#FE7F2D")
-    start= canvas.crear_texto(170,310, 'START','Century'20'#5F0826')
+    start= canvas.crear_texto(170,310, 'START','Century',20,'#5F0826')
     while jueguito == 0:
         canvas.esperar_por_clic()
         click= canvas.obtener_nuevos_clics_del_mouse()
