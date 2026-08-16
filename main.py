@@ -175,7 +175,7 @@ def frentota (palabras_abelardo, palabras_letras):
     show_letras_usadas=[show_letras_usadas1,show_letras_usadas2,show_letras_usadas3,show_letras_usadas4,show_letras_usadas5,show_letras_usadas6,show_letras_usadas7,show_letras_usadas8,show_letras_usadas9,show_letras_usadas10,show_letras_usadas11,show_letras_usadas12,show_letras_usadas13,show_letras_usadas14,show_letras_usadas15,show_letras_usadas16]
     for i in range (0, len(show_letras_usadas)):
             canvas.establecer_oculto(show_letras_usadas[i],True)
-    while rounds == 1:
+    while rounds <= 6:
         you = 0
         aberlado = 0
         if rounds == 1 or 3 or 5:
