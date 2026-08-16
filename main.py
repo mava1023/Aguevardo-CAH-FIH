@@ -19,8 +19,6 @@ def pantalla_frente(jueguito):
     abelardo = canvas.crear_imagen_con_tamanio(0,0,CANVAS_WIDTH, CANVAS_HEIGHT, "menu.png")
     rect_texto = canvas.crear_rectangulo(140, 300, 265,340)
     canvas.establecer_color(rect_texto, "#5F0826")
-    rect_texto2 = canvas.crear_rectangulo(145, 305, 260, 335)
-    canvas.establecer_color(rect_texto2, "#FE7F2D")
     start= canvas.crear_texto(170,310, 'START')
     canvas.establecer_color(start, '#5F0826')
     canvas.establecer_fuente(start, 'Century')
@@ -50,8 +48,9 @@ def pantalla_frente(jueguito):
 def frentota (palabras_abelardo, palabras_letras):
     rounds = 1
     frente = canvas.crear_imagen_con_tamanio(0,0, CANVAS_WIDTH, CANVAS_HEIGHT, "Hagman.png")
-    puntaje_rounds= canvas.crear_texto(90,24, "1")
+    puntaje_rounds= canvas.crear_texto(91,29, "1")
     canvas.establecer_color_relleno(puntaje_rounds,"#FFFFFF")
+    canvas.establecer_fuente(puntaje_rounds, "Century", 12)
 
     rect_1 = canvas.crear_rectangulo(45, 400,90,445 , "#FFFFFF", "#000000")
     rect_2 = canvas.crear_rectangulo(105, 400,150,445 , "#FFFFFF", "#000000")
@@ -68,26 +67,52 @@ def frentota (palabras_abelardo, palabras_letras):
         canvas.establecer_oculto(rects [i], True)
 
     show_letra1= canvas.crear_texto(63,414, "0" )
+    canvas.establecer_color(show_letra1,"#000000")
+    canvas.establecer_fuente(show_letra1, "Century", 14)
     show_letra2= canvas.crear_texto(123,414,  "0" )
+    canvas.establecer_color(show_letra2,"#000000")
+    canvas.establecer_fuente(show_letra2, "Century", 14)
     show_letra3= canvas.crear_texto(182,414, "0")
+    canvas.establecer_color(show_letra3,"#000000")
+    canvas.establecer_fuente(show_letra3, "Century", 14)
     show_letra4= canvas.crear_texto(242,414, "0" )
+    canvas.establecer_color(show_letra4,"#000000")
+    canvas.establecer_fuente(show_letra4, "Century", 14)
     show_letra5= canvas.crear_texto(303,414, "0" )
+    canvas.establecer_color(show_letra5,"#000000")
+    canvas.establecer_fuente(show_letra5, "Century", 14)
     show_letra6= canvas.crear_texto(63,478,  "0")
+    canvas.establecer_color(show_letra6,"#000000")
+    canvas.establecer_fuente(show_letra6, "Century", 14)
     show_letra7= canvas.crear_texto(123,478,"0" )
+    canvas.establecer_color(show_letra7,"#000000")
+    canvas.establecer_fuente(show_letra7, "Century", 14)
     show_letra8= canvas.crear_texto(182,478,"0" )
+    canvas.establecer_color(show_letra8,"#000000")
+    canvas.establecer_fuente(show_letra8, "Century", 14)
     show_letra9= canvas.crear_texto(242,478, "0" )
+    canvas.establecer_color(show_letra9,"#000000")
+    canvas.establecer_fuente(show_letra9, "Century", 14)
     show_letra10= canvas.crear_texto(303,478, "0" )
+    canvas.establecer_color(show_letra10,"#070101")
+    canvas.establecer_fuente(show_letra10, "Century", 14)
     
     show_letras = [show_letra1,show_letra2,show_letra3,show_letra4,show_letra5,show_letra6,show_letra7,show_letra8,show_letra9,show_letra10]
     for i in range (len(show_letras) ) :
-        canvas.establecer_oculto(show_letras [i], True)
+      canvas.establecer_oculto(show_letras [i], True)
 
     while rounds == 1:
         you = 0
         aberlado = 0
-        puntaje_mistakes= canvas.crear_texto(330,74, "0" ) #24
-        puntaje_you= canvas.crear_texto(260,23, "0" ) #14
-        puntaje_abelardo= canvas.crear_texto(388,23, "0" ) #24
+        puntaje_mistakes= canvas.crear_texto(335,84, "0" )
+        canvas.establecer_color(puntaje_mistakes,"#FFFFFF")
+        canvas.establecer_fuente(puntaje_mistakes, "Century", 18) #24
+        puntaje_you= canvas.crear_texto(260,28, "0" )
+        canvas.establecer_color(puntaje_you,"#000000")
+        canvas.establecer_fuente(puntaje_you, "Century", 14) #14
+        puntaje_abelardo= canvas.crear_texto(388,28, "0" ) 
+        canvas.establecer_color(puntaje_abelardo,"#000000")
+        canvas.establecer_fuente(puntaje_abelardo, "Century", 14)#24
         if round == 1 or 3 or 5:
 
             palabra_number = random.randint (0,16)
