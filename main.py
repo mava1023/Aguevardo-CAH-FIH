@@ -44,8 +44,10 @@ def pantalla_frente(jueguito):
     canvas.eliminar(start)
     
     
-
-
+def loose():
+    cambodia = canvas.crear_imagen_con_tamanio(0,0,CANVAS_WIDTH, CANVAS_HEIGHT,"wompwomp.png")
+def win():
+    camerun = canvas.crear_imagen_con_tamanio(0,0,CANVAS_WIDTH, CANVAS_HEIGHT,"yippyjailanyway.png")
 
 def frentota (palabras_abelardo, palabras_letras):
     mistakes = 0
@@ -238,17 +240,19 @@ def frentota (palabras_abelardo, palabras_letras):
                 rounds = rounds + 1
 
 
-def tic_tac_toe():
-    yay = canvas.crear_imagen_con_tamanio(0,0,CANVAS_WIDTH, CANVAS_HEIGHT,"Tictactoe.png")
-    x_1 = canvas.crear_imagen_con_tamanio(50,600,50,50, "x.png")
-    
-   # x_s = (x_1,x_2,x_3,x_4,x_5,x_6,x_7,x_8,x_9)   
+
 
 
 def main():
     pantalla_frente(jueguito)
-    frentota (palabras_abelardo,palabras_letras)
-    tic_tac_toe()
+    fren= frentota (palabras_abelardo,palabras_letras)
+    if fren ==1:
+        canvas.eliminar_todo()
+        win()
+    elif fren ==0:
+        canvas.eliminar_todo()
+        loose()
+        
     
     
     
