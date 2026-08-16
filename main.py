@@ -93,7 +93,7 @@ def frentota (palabras_abelardo, palabras_letras):
             for i in range (0,letras-1):
                 lista_word.append(palabra[i])
             
-            if new_l
+            
             
         
 
