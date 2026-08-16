@@ -191,19 +191,27 @@ def frentota (palabras_abelardo, palabras_letras):
             for i in range (0, letras):
                 canvas.establecer_oculto(rects [i], False)
 
-            new_l= letter.upper()
             while not juego_acaba:
                 letter= input ("Guess letters: ")
                 while type(letter) != str:
                     letter = input("Plase enter a letter, either uppercase or lowercase: ")
-                    for i in range (0,letras-1):
-                        lista_word.append(palabra[i])
-                    if letter not in palabra:
-                        intentos -= 1
-                        if intentos==0:
-                            juego_acaba=True
-                            if juego_acaba==True:
-                                round += 1
+
+                new_l= letter.upper()
+                for i in range (0,letras):
+                    lista_word.append(palabra[i])
+                print(new_l,lista_word)
+                if new_l in palabra:
+                    posicion_letra = palabra.find(new_l)
+                    
+                    canvas.establecer_oculto(show_letras[posicion_letra], False)
+                    canvas.establecer_texto(show_letras[posicion_letra], new_l)
+
+                elif new_l not in palabra:
+                    mistakes -= 1
+                    canvas.establecer_texto(puntaje_mistakes, str(mistakes))
+                    
+
+                round += 1
                     
 
         elif round == 2 or 4 or 6:
@@ -239,7 +247,7 @@ def tic_tac_toe():
 
 def main():
     pantalla_frente(jueguito)
-    #frentota (palabras_abelardo,palabras_letras)
+    frentota (palabras_abelardo,palabras_letras)
     tic_tac_toe()
     
     
