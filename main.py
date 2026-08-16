@@ -1,4 +1,4 @@
-from graphics import Canvas
+from graficos import Canvas
 import random
     
 CANVAS_WIDTH = 400
@@ -8,24 +8,24 @@ canvas = Canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 letras =["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 letrasm =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 both=[letras,letrasm]
-palabras_abelardo = ["FRACKING", "SECURITY", "PROLIFE", "RIGHTS", "FAMILY", "TIGER", "FIRM","", "PETRO", "URIBE", "TRADWIFE", "DESSERT", "FOREHEAD","FRAUD", "ELECTIONS","TRUMP","MILEI"]
+palabras_abelardo = ["FRACKING", "SECURITY", "PROLIFE", "RIGHTS", "FAMILY", "TIGER", "FIRM","SNARL", "PETRO", "URIBE", "TRADWIFE", "DESSERT", "FOREHEAD","FRAUD", "ELECTIONS","TRUMP","MILEI"]
 Mega_JAIL = 0
 jueguito= 0
-palabras_letras = [8,8,7,6,6,6,5,4,4,5,5,8,6,8,5,9,5,5]
+palabras_letras = [8,8,7,6,6,5,4,5,5,5,8,7,8,5,9,5,5]
 
 
 def pantalla_frente(jueguito):
     
-    abelardo = canvas.create_image_with_size(0,0,CANVAS_WIDTH, CANVAS_HEIGHT, "menu.png")
-    rect_texto = canvas.create_rectangle(140, 300, 265,340 , "#5F0826")
-    rect_texto2 = canvas.create_rectangle(145, 305, 260, 335, "#FE7F2D")
-    start= canvas.create_text(170,310, text = 'START',font = 'Century', font_size = 20, color ='#5F0826')
+    abelardo = crear_imagen_con_tamanio(0,0,CANVAS_WIDTH, CANVAS_HEIGHT, "menu.png")
+    rect_texto = canvas.crear_rectangulo(140, 300, 265,340 , "#5F0826")
+    rect_texto2 = canvas.crear_rectangulo(145, 305, 260, 335, "#FE7F2D")
+    start= canvas.crear_texto(170,310, text = 'START',font = 'Century', font_size = 20, color ='#5F0826')
     while jueguito == 0:
-        canvas.wait_for_click()
-        click = canvas.get_last_click()
+        canvas.esperar_por_clic()
+        click.p = canvas.obtener_nuevos_clics_del_mouse()
         x = click[0]
         y = click[1]
-        objs = canvas.find_overlapping(x,y,x+1, y+1)
+        objs = canvas.encontrar_superposicion(x,y,x+1, y+1)
         figuritas = [rect_texto,rect_texto2,start]
         if str(rect_texto) in objs:
             jueguito = 1
