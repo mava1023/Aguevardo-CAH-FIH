@@ -8,10 +8,10 @@ canvas = Canvas(CANVAS_WIDTH, CANVAS_HEIGHT)
 letras =["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
 letrasm =["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
 both=[letras,letrasm]
-palabras_abelardo = ["FRACKING", "SECURITY", "PROLIFE", "RIGHTS", "FAMILY", "TIGER", "FIRM","SNARL", "PETRO", "URIBE", "TRADWIFE", "BROW", "WASTE","FRAUD", "VOTE","TRUMP"]
+palabras_abelardo = ["FRACKING", "SECURITY", "PROLIFE", "RIGHTS", "FAMILY", "TIGER", "FIRM","SNARL", "PETRO", "URIBE", "TRADWIFE", "BROW", "WASTE","FRAUD", "VOTE","TRUMP", "DUNCE"]
 Mega_JAIL = 0
 jueguito= 0
-palabras_letras = [8,8,7,6,6,5,4,5,5,5,8,7,8,5,9,5,5]
+palabras_letras = [8,8,7,6,6,5,4,5,5,5,8,4,5,5,4,5,5]
 
 
 def pantalla_frente(jueguito):
@@ -183,7 +183,7 @@ def frentota (palabras_abelardo, palabras_letras):
             palabra_number = random.randint (0,16)
             print (palabra_number)
             palabra = palabras_abelardo [palabra_number]
-
+            lista_word= []
             letras = palabras_letras [palabra_number]
             juego_acaba = False
             
@@ -191,28 +191,20 @@ def frentota (palabras_abelardo, palabras_letras):
             for i in range (0, letras):
                 canvas.establecer_oculto(rects [i], False)
 
-            
-
+            new_l= letter.upper()
             while not juego_acaba:
-                lista_word=[]
                 letter= input ("Guess letters: ")
                 while type(letter) != str:
                     letter = input("Plase enter a letter, either uppercase or lowercase: ")
-
-                for i in range(0,len(palabra)):
-                    lista_word.append(palabra[i])
-
-                new_l= letter.upper()
-                
-                print(new_l, lista_word)
-                if new_l in lista_word:
-                    posicion_letter = palabra.find(new_l)
-                    canvas.establecer_oculto(show_letras[posicion_letter],False)
-                    canvas.establecer_texto(show_letras[posicion_letter], new_l)
-                elif new_l not in lista_word:
-                    mistakes += 1
-                    canvas.establecer_texto (puntaje_mistakes, str(mistakes))
-            
+                    for i in range (0,letras-1):
+                        lista_word.append(palabra[i])
+                    if letter not in palabra:
+                        intentos -= 1
+                        if intentos==0:
+                            juego_acaba=True
+                            if juego_acaba==True:
+                                round += 1
+                    
 
         elif round == 2 or 4 or 6:
             palabra_number = random.randint (0,16)
@@ -240,15 +232,15 @@ def frentota (palabras_abelardo, palabras_letras):
 
 def tic_tac_toe():
     yay = canvas.crear_imagen_con_tamanio(0,0,CANVAS_WIDTH, CANVAS_HEIGHT,"Tictactoe.png")
+    x_1 = canvas.crear_imagen_con_tamanio(50,600,50,50, "x.png")
     
    # x_s = (x_1,x_2,x_3,x_4,x_5,x_6,x_7,x_8,x_9)   
 
 
 def main():
-    
     pantalla_frente(jueguito)
-    frentota (palabras_abelardo,palabras_letras)
-    
+    #frentota (palabras_abelardo,palabras_letras)
+    tic_tac_toe()
     
     
     
