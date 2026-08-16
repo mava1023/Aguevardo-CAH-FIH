@@ -18,14 +18,13 @@ def pantalla_frente(jueguito):
     
     abelardo = canvas.crear_imagen_con_tamanio(0,0,CANVAS_WIDTH, CANVAS_HEIGHT, "menu.png")
     rect_texto = canvas.crear_rectangulo(140, 300, 265,340)
+    rect_texto2 = canvas.crear_rectangulo(145, 305, 260, 335,)
     canvas.establecer_color(rect_texto, "#5F0826")
-    start= canvas.crear_texto(170,310, 'START')
-    canvas.establecer_color(start, '#5F0826')
-    canvas.establecer_fuente(start, 'Century')
-    canvas.establecer_tamanio(start,20)
-    rect_texto = canvas.crear_rectangulo(140, 300, 265,340 , "#5F0826")
-    rect_texto2 = canvas.crear_rectangulo(145, 305, 260, 335, "#FE7F2D")
-    start= canvas.crear_texto(170,310, 'START')
+    canvas.establecer_color(rect_texto2,"#FE7F2D")
+    start= canvas.crear_texto(200,320, 'START')
+    canvas.establecer_color(start, '#FFFFFF')
+    canvas.establecer_fuente(start, 'Century',24)
+    
     while jueguito == 0:
         canvas.esperar_por_clic()
         x= canvas.obtener_mouse_x()
@@ -129,6 +128,31 @@ def frentota (palabras_abelardo, palabras_letras):
 
             for i in range (0,letras-1):
                 lista_word.append(palabra[i])
+            if letter in lista_word:
+                print(letter)
+            else:
+                print()
+
+    elif round == 2 or 4 or 6:
+
+            palabra_number = random.randint (0,16)
+            print (palabra_number)
+            palabra = palabras_abelardo [palabra_number]
+            lista_word= []
+            letras = palabras_letras [palabra_number]
+            for i in range (0, letras):
+                canvas.establecer_oculto(rects [i], False)
+            letter= input ("Guess letters: ")
+            while type(letter) != str:
+                letter = input("Plase enter a letter, either uppercase or lowercase: ")
+            new_l= letter.upper()
+
+            for i in range (0,letras-1):
+                lista_word.append(palabra[i])
+            while letter in lista_word:
+                print(letter)
+                
+            
             
             
         
