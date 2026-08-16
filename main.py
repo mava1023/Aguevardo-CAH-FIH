@@ -22,25 +22,27 @@ def pantalla_frente(jueguito):
     start= canvas.crear_texto(170,310, 'START')
     while jueguito == 0:
         canvas.esperar_por_clic()
-        click= canvas.obtener_nuevos_clics_mouse()
-        x = click[0]
-        y = click[1]
+        x= canvas.obtener_mouse_x()
+        y=canvas.obtener_mouse_y()
+        print (x, y)
         objs = canvas.encontrar_superposicion(x,y,x+1, y+1)
         figuritas = [rect_texto,rect_texto2,start]
-        if str(rect_texto) in objs:
+        if rect_texto in objs:
             jueguito = 1
-        elif str (rect_texto2) in objs:
+        elif rect_texto2 in objs:
+           jueguito = 1
+        elif start in objs:
             jueguito = 1
-        elif str(start) in objs:
-            jueguito = 1
-    print = jueguito
+
+    
+    
 
 
 
 def frentota (palabras_abelardo, palabras_letras):
     rounds = 1
     frente = canvas.crear_imagen_con_tamanio(0,0, CANVAS_WIDTH, CANVAS_HEIGHT, "Hagman.png")
-    puntaje_rounds= canvas.crear_texto(90,24, "1",'Century')
+    puntaje_rounds= canvas.crear_texto(90,24, "1")
     canvas.establecer_color_relleno(puntaje_rounds,"#FFFFFF")
 
     rect_1 = canvas.crear_rectangulo(45, 400,90,445 , "#FFFFFF", "#000000")
@@ -55,7 +57,7 @@ def frentota (palabras_abelardo, palabras_letras):
     rect_10 = canvas.crear_rectangulo(285, 465,330,510 , "#FFFFFF", "#000000")
     rects = [rect_1,rect_2,rect_3,rect_4,rect_5,rect_6,rect_7,rect_8,rect_9,rect_10]
     for i in range (len(rects) ) :
-        canvas.set_hidden(rects [i], True)
+        canvas.establecer_oculto(rects [i], True)
 
     show_letra1= canvas.crear_texto(63,414, "0" )
     show_letra2= canvas.crear_texto(123,414,  "0" )
@@ -111,8 +113,8 @@ def frentota (palabras_abelardo, palabras_letras):
 def main():
     pantalla_frente(jueguito)
     canvas.eliminar_todo()
-    #frentota (palabras_abelardo,palabras_letras)
-    # TODO: your code here!
+    frentota (palabras_abelardo,palabras_letras)
+    
     
 
 
